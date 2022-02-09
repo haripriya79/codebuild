@@ -61,7 +61,7 @@ phases:
 #     on-failure: ABORT | CONTINUE
      commands:
        - aws s3api create-bucket --bucket mytest-bucket-harip
-       - echo I have created finally s3 bucket
+       - echo created the s3 bucket
 #     finally:
 #       - command
 #       - command
