@@ -2,14 +2,14 @@ version: 0.2
 
 run-as: root
 
-env:
+# env:
 #   shell: shell-tag
 #   variables:
 #     key: "value"
 #     key: "value"
-    parameter-store:
-        AWS_ACCESS_KEY_ID_PARAM: /CodeBuild/AWS_ACCESS_KEY_ID
-        AWS_SECRET_ACCESS_KEY_PARAM: /CodeBuild/AWS_SECRET_ACCESS_KEY
+#   parameter-store:
+#     key: "value"
+#     key: "value"
 #   exported-variables:
 #     - variable
 #     - variable
@@ -41,8 +41,8 @@ phases:
       - unzip awscliv2.zip
       - ./aws/install
       - aws --version
-      - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID_PARAM
-      - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY_PARAM
+      - aws configure set aws_access_key_id AKIAXJVFN4PSTSRWDN5L
+      - aws configure set aws_secret_access_key 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
       
      finally:
        - echo you did a great job
@@ -60,7 +60,7 @@ phases:
      run-as: root
 #     on-failure: ABORT | CONTINUE
      commands:
-       - aws s3api create-bucket --bucket mytest-bucket-haripp
+       - aws s3api create-bucket --bucket mytest-bucket-harip
        - echo I have created finally s3 bucket
 #     finally:
 #       - command
